@@ -4,7 +4,12 @@ import java.io.IOException;
 
 public class BitcoinService {
 
+
+    private WebPageManager webPageManagerBean;
+
     private Double rate = null;
+
+
 
     private Boolean forceRefresh = false;
 
@@ -40,6 +45,18 @@ public class BitcoinService {
             getBitcoinRate();
         }
         return prixEnEuro / rate;
+    }
+
+    public void setForceRefresh(Boolean forceRefresh) {
+        this.forceRefresh = forceRefresh;
+    }
+
+    public WebPageManager getWebPageManagerBean() {
+        return webPageManagerBean;
+    }
+
+    public void setWebPageManagerBean(WebPageManager webPageManagerBean) {
+        this.webPageManagerBean = webPageManagerBean;
     }
 
 }

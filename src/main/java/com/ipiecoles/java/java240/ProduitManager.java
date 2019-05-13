@@ -9,6 +9,15 @@ public class ProduitManager {
 
     private List<Produit> produits = new ArrayList<>();
 
+
+
+    private WebPageManager webPageManager;
+
+
+    private BitcoinService bitcoinService;
+
+
+
     /**
      * Méthode qui demande les caractéristiques d'un nouveau produit
      * à l'utilisateur et qui l'ajoute au catalogue
@@ -63,4 +72,10 @@ public class ProduitManager {
         System.out.println("Ajout de " + nbProduits + " produits !");
     }
 
+    public void setWebPageManager(WebPageManager webPageManager) {
+        this.webPageManager = webPageManager;
+    }
+    public void setBitcoinService(BitcoinService bitcoinService) {
+        this.bitcoinService = bitcoinService;
+    }
 }
