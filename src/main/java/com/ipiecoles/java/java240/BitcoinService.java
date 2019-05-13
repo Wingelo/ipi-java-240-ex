@@ -4,9 +4,17 @@ import java.io.IOException;
 
 public class BitcoinService {
 
+
+
+    private WebPageManager webPageManager;
     private Double rate = null;
 
     private Boolean forceRefresh = false;
+
+    public void setForceRefresh(Boolean forceRefresh) {
+        this.forceRefresh = forceRefresh;
+    }
+
 
     /**
      * Méthode qui renvoie le cours du Bitcoin
@@ -40,6 +48,13 @@ public class BitcoinService {
             getBitcoinRate();
         }
         return prixEnEuro / rate;
+    }
+    public WebPageManager getWebPageManager() {
+        return webPageManager;
+    }
+
+    public void setWebPageManager(WebPageManager webPageManager) {
+        this.webPageManager = webPageManager;
     }
 
 }
