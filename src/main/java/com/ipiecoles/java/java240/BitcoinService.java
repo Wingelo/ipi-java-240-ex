@@ -1,11 +1,21 @@
 package com.ipiecoles.java.java240;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 
+@Component
 public class BitcoinService {
 
 
-    private WebPageManager webPageManagerBean;
+
+    @Autowired
+    private WebPageManager webPageManager;
+
+    public void setWebPageManager(WebPageManager webPageManager) {
+        this.webPageManager = webPageManager;
+    }
 
     private Double rate = null;
 
@@ -51,12 +61,6 @@ public class BitcoinService {
         this.forceRefresh = forceRefresh;
     }
 
-    public WebPageManager getWebPageManagerBean() {
-        return webPageManagerBean;
-    }
 
-    public void setWebPageManagerBean(WebPageManager webPageManagerBean) {
-        this.webPageManagerBean = webPageManagerBean;
-    }
 
 }
